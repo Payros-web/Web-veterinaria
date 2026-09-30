@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mascotas - Veterinaria Cuatro Patas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">🐾 Cuatro Patas</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="clientes.html">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="mascotas.html">Mascotas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inventario.html">Inventario</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ventas.html">Ventas</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mb-5">
+        <h2 class="mb-4 text-center fw-bold">Gestión de Pacientes y Mascotas</h2>
+
+        <div class="row g-4">
+            <!-- FORMULARIO REGISTRO -->
+            <div class="col-md-5">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-primary text-white fw-semibold">
+                        Registrar Nueva Mascota
+                    </div>
+                    <div class="card-body">
+                        <form id="formMascota">
+                            <div class="mb-3">
+                                <label class="form-label">Dueño / Cliente</label>
+                                <select id="clienteSelect" class="form-select" required>
+                                    <option value="">Cargando clientes...</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Nombre de la Mascota</label>
+                                <input type="text" id="nombreMascota" class="form-control" placeholder="Ej: Firulais, Luna" required>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Especie</label>
+                                    <select id="especieMascota" class="form-select" required>
+                                        <option value="Perro">Perro</option>
+                                        <option value="Gato">Gato</option>
+                                        <option value="Ave">Ave</option>
+                                        <option value="Otro">Otro</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Raza</label>
+                                    <input type="text" id="razaMascota" class="form-control" placeholder="Ej: Caniche, Mestizo">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Observaciones / Síntomas</label>
+                                <textarea id="observacionesMascota" class="form-control" rows="3" placeholder="Motivo de consulta, síntomas presentados, alergias..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 fw-bold">Guardar Mascota</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TABLA DE MASCOTAS -->
+            <div class="col-md-7">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-primary text-white fw-semibold">
+                        Listado de Pacientes
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Mascota</th>
+                                        <th>Especie / Raza</th>
+                                        <th>Dueño</th>
+                                        <th>Síntomas / Observaciones</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablaMascotas">
+                                    <tr>
+                                        <td colspan="5" class="text-center py-3 text-muted">Cargando pacientes...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="Js/mascotas.js"></script>
+</body>
+</html>
