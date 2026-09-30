@@ -31,6 +31,7 @@
 - Se unificó la barra de navegación (`navbar`) en todas las vistas de la aplicación.
 
 ### Semana 5
-- Se preparó el repositorio público de GitHub (`TPayros-web/Web-veterinaria`) y se sincronizaron los archivos mediante Git.
-- Se desplegó la aplicación en Vercel, proporcionando una URL pública accesible desde cualquier dispositivo y evitando restricciones de CORS locales.
-- Se realizaron pruebas de integración end-to-end (CRUD de clientes y mascotas, actualización de inventario y procesamiento de ventas en tiempo real).
+- Se incorporó la tabla `turnos` en Supabase relacionalmente vinculada a `clientes` y `mascotas`.
+- Se desarrolló el Módulo de Agenda y Gestión de Turnos (`turnos.html` y `Js/turnos.js`), permitiendo programar citas por fecha, hora y motivo de consulta, además de actualizar el estado del turno (Pendiente / Atendido).
+- Se agregaron accesos directos y atajos entre módulos (Clientes → Mascotas → Turnos) para optimizar el flujo de uso.
+- Se preparó el repositorio público en GitHub y se desplegó la aplicación en Vercel con integración continua (CI/CD).
