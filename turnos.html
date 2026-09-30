@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mascotas - Veterinaria Cuatro Patas</title>
+    <title>Turnos - Veterinaria Cuatro Patas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
@@ -20,8 +20,8 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="clientes.html">Clientes</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="mascotas.html">Mascotas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="turnos.html">Turnos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mascotas.html">Mascotas</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="turnos.html">Turnos</a></li>
                     <li class="nav-item"><a class="nav-link" href="inventario.html">Inventario</a></li>
                     <li class="nav-item"><a class="nav-link" href="ventas.html">Ventas</a></li>
                 </ul>
@@ -30,22 +30,17 @@
     </nav>
 
     <div class="container mb-5">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-    <h2 class="fw-bold m-0">🐾 Gestión de Pacientes y Mascotas</h2>
-    <a href="turnos.html" class="btn btn-outline-primary fw-bold shadow-sm">
-        📅 Agendar Turno &rarr;
-    </a>
-</div>
+        <h2 class="mb-4 text-center fw-bold">📅 Agenda y Gestión de Turnos</h2>
 
         <div class="row g-4">
-            <!-- FORMULARIO REGISTRO -->
+            <!-- FORMULARIO NUEVO TURNO -->
             <div class="col-md-5">
                 <div class="card shadow-sm border-0">
                     <div class="card-header bg-primary text-white fw-semibold">
-                        Registrar Nueva Mascota
+                        Agendar Nuevo Turno
                     </div>
                     <div class="card-body">
-                        <form id="formMascota">
+                        <form id="formTurno">
                             <div class="mb-3">
                                 <label class="form-label">Dueño / Cliente</label>
                                 <select id="clienteSelect" class="form-select" required>
@@ -53,55 +48,58 @@
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Nombre de la Mascota</label>
-                                <input type="text" id="nombreMascota" class="form-control" placeholder="Ej: Firulais, Luna" required>
+                                <label class="form-label">Mascota</label>
+                                <select id="mascotaSelect" class="form-select" required disabled>
+                                    <option value="">Seleccione un dueño primero...</option>
+                                </select>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label class="form-label">Especie</label>
-                                    <select id="especieMascota" class="form-select" required>
-                                        <option value="Perro">Perro</option>
-                                        <option value="Gato">Gato</option>
-                                        <option value="Ave">Ave</option>
-                                        <option value="Otro">Otro</option>
-                                    </select>
+                                    <label class="form-label">Fecha</label>
+                                    <input type="date" id="fechaTurno" class="form-control" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <label class="form-label">Raza</label>
-                                    <input type="text" id="razaMascota" class="form-control" placeholder="Ej: Caniche, Mestizo">
+                                    <label class="form-label">Hora</label>
+                                    <input type="time" id="horaTurno" class="form-control" required>
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Observaciones / Síntomas</label>
-                                <textarea id="observacionesMascota" class="form-control" rows="3" placeholder="Motivo de consulta, síntomas presentados, alergias..."></textarea>
+                                <label class="form-label">Motivo de Consulta</label>
+                                <select id="motivoTurno" class="form-select" required>
+                                    <option value="Consulta General">Consulta General</option>
+                                    <option value="Vacunación / Desparasitación">Vacunación / Desparasitación</option>
+                                    <option value="Peluquería / Baño">Peluquería / Baño</option>
+                                    <option value="Control / Retorno">Control / Retorno</option>
+                                    <option value="Cirugía / Especialidad">Cirugía / Especialidad</option>
+                                </select>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100 fw-bold">Guardar Mascota</button>
+                            <button type="submit" class="btn btn-primary w-100 fw-bold">Guardar Turno</button>
                         </form>
                     </div>
                 </div>
             </div>
 
-            <!-- TABLA DE MASCOTAS -->
+            <!-- TABLA DE TURNOS -->
             <div class="col-md-7">
                 <div class="card shadow-sm border-0">
                     <div class="card-header bg-primary text-white fw-semibold">
-                        Listado de Pacientes
+                        Próximos Turnos Agendados
                     </div>
                     <div class="card-body p-0">
                         <div class="table-responsive">
                             <table class="table table-hover align-middle mb-0">
                                 <thead class="table-light">
                                     <tr>
-                                        <th>Mascota</th>
-                                        <th>Especie / Raza</th>
-                                        <th>Dueño</th>
-                                        <th>Síntomas / Observaciones</th>
+                                        <th>Fecha / Hora</th>
+                                        <th>Mascota (Dueño)</th>
+                                        <th>Motivo</th>
+                                        <th>Estado</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
-                                <tbody id="tablaMascotas">
+                                <tbody id="tablaTurnos">
                                     <tr>
-                                        <td colspan="5" class="text-center py-3 text-muted">Cargando pacientes...</td>
+                                        <td colspan="5" class="text-center py-3 text-muted">Cargando turnos...</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -113,6 +111,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="Js/mascotas.js"></script>
+    <script type="module" src="Js/turnos.js"></script>
 </body>
 </html>
