@@ -1,0 +1,152 @@
+/* ==========================================================================
+   ESTILOS GENERALES Y VARIABLES - VETERINARIA CUATRO PATAS
+   ========================================================================== */
+:root {
+    --primary-color: #2b6cb0;
+    --primary-hover: #1a4971;
+    --accent-color: #319795;
+    --bg-light: #f7fafc;
+    --text-dark: #2d3748;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   FONDO CON DEGRADADIZADO AMARILLO Y PATITAS
+   ========================================================================== */
+body {
+    /* Combinamos un degradado radial cállido (amarillo/naranja suave) con la textura de patitas repitiéndose */
+    background-image: 
+        radial-gradient(circle, rgba(255, 200, 87, 0.45) 0%, rgba(240, 168, 50, 0.75) 100%),
+        url('patitas-fondo.jfif');
+    
+    background-repeat: repeat;           /* Hace que el patrón de huellas se repita */
+    background-size: auto, 350px auto;   /* Escala el patrón de huellas para que se vea nítido */
+    background-attachment: fixed;        /* El fondo se queda fijo mientras haces scroll */
+    
+    color: var(--text-dark);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   NAVEGACIÓN (NAVBAR)
+   ========================================================================== */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+    font-size: 1.35rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-link {
+    transition: all 0.2s ease-in-out;
+    border-radius: 6px;
+    margin: 0 2px;
+    padding: 0.5rem 0.8rem !important;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link.active {
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================================================
+   TARJETAS Y CONTENEDORES (CARDS)
+   ========================================================================== */
+.card {
+    border-radius: var(--border-radius) !important;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-header {
+    font-size: 1.05rem;
+    letter-spacing: 0.3px;
+    padding: 0.9rem 1.25rem;
+}
+
+/* Efecto hover suave en tarjetas interactivas */
+.card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ==========================================================================
+   TABLAS DE DATOS
+   ========================================================================== */
+.table-responsive {
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+    letter-spacing: 0.8px;
+    padding: 0.85rem 1rem;
+}
+
+.table tbody td {
+    padding: 0.85rem 1rem;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(43, 108, 176, 0.04);
+}
+
+/* Badges personalizados */
+.badge {
+    font-weight: 500;
+    padding: 0.45em 0.7em;
+    border-radius: 6px;
+}
+
+/* ==========================================================================
+   FORMULARIOS Y BOTONES
+   ========================================================================== */
+.form-control, .form-select {
+    border-radius: 8px;
+    padding: 0.6rem 0.85rem;
+    border: 1px solid #cbd5e0;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.15);
+}
+
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    transition: all 0.2s ease;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   INICIO / JUMBOTRON (index.html)
+   ========================================================================== */
+.display-5 {
+    letter-spacing: -0.5px;
+}
+
+/* Transición suave para los accesos directos */
+.btn-outline-primary, 
+.btn-outline-success, 
+.btn-outline-warning {
+    border-width: 2px;
+}
